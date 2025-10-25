@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style></style>
+  <body>
+    <main class="auth-wrap">
+      <section class="card" aria-labelledby="login-title">
+        <div class="header">
+          <div class="logo" aria-hidden="true">EA</div>
+          <div class="title">
+            <h1 id="login-title">Welcome Back</h1>
+            <p>Log in to access your dashboard</p>
+          </div>
+        </div>
+
+        <form class="form" action="" method="post" novalidate>
+          <div>
+            <label class="label" for="email">Email</label>
+            <input
+              class="input"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="example@gmail.com"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div>
+            <label class="label" for="password">Password</label>
+            <input
+              class="input"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              minlength="8"
+              required
+            />
+            <p class="hint xsmall">Use at least 8 characters</p>
+          </div>
+
+          <div class="right">
+            <a class="xsmall" href="#">Forgot password?</a>
+          </div>
+
+          <button class="btn" type="submit">Log in</button>
+
+          <p class="alt">
+            New Here?<a href="/auth/register.html">Create an account</a>
+          </p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

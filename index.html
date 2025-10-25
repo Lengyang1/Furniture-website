@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>hello World</title>
+  </head>
+
+  <body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <video autoplay muted loop playsinline>
+        <!--fill in the src-->
+        <source src="videos/Hero Furniture BG13.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <!--diffrence between adding links and adding section-->
+      <div class="hero-content">
+        <h1>Your Place for Everything Furniture and Landscape</h1>
+        <p>
+          We design and create an inviting and showcase environment for parties.
+        </p>
+        <a href="#footer" class="btn">Learn More</a>
+        <a href="#cards" class="btn">Login to view our showcase</a>
+      </div>
+    </section>
+
+    <!-- CARD SECTION -->
+    <section id="cards" class="card-section">
+      <h2>Our Featured Services</h2>
+      <div class="card-container">
+        <div class="card">
+          <!--fill in the src and alt-->
+          <img src="image/Ouside Furniture Card1.jpeg" alt="" />
+          <div class="card-content">
+            <h3>Shrubs and Plants</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              molestiae ut consectetur ad nihil minus enim officiis mollitia
+              repudiandae quis, quisquam velit, asperiores quaerat odio dolores
+              possimus omnis unde, aliquid earum perferendis. Quos quis quasi
+              similique sequi cupiditate provident esse, quisquam expedita iusto
+              at ratione aperiam consequatur corrupti unde explicabo.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <!--fill in the src and alt-->
+          <img src="image/Outside Furniture Card2.jpeg" alt="" />
+          <div class="card-content">
+            <h3>Backyard Coverings</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
+              incidunt quas at quam expedita voluptas amet exercitationem esse
+              et cum quibusdam saepe, molestias illo fugiat possimus quos magnam
+              earum fugit atque rerum? Earum nihil itaque vel ratione tempora.
+              Fuga corrupti, consequatur cum eveniet adipisci animi similique
+              reprehenderit quas? Voluptatum, ullam!
+            </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <!--fill in the src and alt-->
+          <img src="image/Outside Furniture Card3.jpeg" alt="" />
+          <div class="card-content">
+            <h3>Walking Pads</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad
+              molestiae nobis ipsum unde quas velit aperiam officia pariatur
+              quia, harum commodi animi perspiciatis placeat similique inventore
+              ex quo vitae aliquam accusamus vel neque! Voluptates voluptatem
+              debitis earum, impedit, iste maiores provident exercitationem
+              nesciunt laboriosam explicabo eum ab officiis eligendi nam.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <!--fill in the src and alt-->
+          <img src="image/Outside Furniture Card4.jpeg" alt="" />
+          <div class="card-content">
+            <h3>Ambience and Lighting</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+              quaerat optio nulla provident expedita quibusdam aspernatur earum
+              ab neque vel eveniet laudantium et eaque, ullam culpa vitae itaque
+              nemo aperiam, ducimus quidem tenetur quia voluptate esse
+              inventore! Accusantium magnam consequuntur, dolore corporis sunt
+              ea vel ut dolorum! Sint, adipisci inventore.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer id="footer" class="footer">
+      <div class="footer-content">
+        <p>
+          &copy; <span id="year"></span> Your Company Name. All rights reserved.
+        </p>
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <a href="#privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <!-- ---------- JAVASCRIPT SECTION (Added Below) ---------- -->
+    <script>
+      // 1️ Smooth Scrolling for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // 2 Card scroll animation
+      const cards = document.querySelectorAll(".card");
+      const revealCards = () => {
+        const triggerBottom = window.innerHeight * 0.8;
+        cards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < triggerBottom) {
+            card.classList.add("show");
+          }
+        });
+      };
+      window.addEventListener("scroll", revealCards);
+      revealCards(); // Run once on load
+
+      // 3 Dynamic year update in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</html>
